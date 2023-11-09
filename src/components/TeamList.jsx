@@ -6,6 +6,7 @@ const countryId ='111'
 
 const TeamList = ()=>{
 const [teams,setTeams] = useState([]);
+const [badgeUrl,setBadgeUrl]=useState('')
 
 useEffect(() => {
     fetch(`${baseUrl}${countryId}&APIkey=${apiKey}`)
@@ -18,6 +19,7 @@ useEffect(() => {
       .then(data => {
         console.log('Отговор от API:', data);
         setTeams(data);
+        setBadgeUrl(data.team_badge)
       })
       .catch(error => console.error('Грешка при извличане на отбори:', error));
   }, []);

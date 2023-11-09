@@ -6,15 +6,24 @@ const key = '2844dc51f890f24149f95bc2b52aec45319e12cc47db66e1e3d30e2ad073cded';
 
 const TeamStat = ()=>{
     const [teamInfo,setTeamInfo] = useState({});
+    const [logoUrl, setLogoUrl] = useState('')
     const {id} =useParams();
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`${baseUrl}&APIkey=${key}&team_id=${id}`)
-        .then(res =>res.json())
-        .then(data =>console.log(data));
+            .then(res => res.json())
+            .then(data => {
+                setTeamInfo(data[0]);
+                setLogoUrl(data[0].team_badge);
+            });
 
-    },[id]);
+    }, [id]);
     return(
+<div>
 <h1>{teamInfo.team_name}</h1>
+            <p>Founded: {teamInfo.team_founded}</p>
+            <p>Country: {teamInfo.team_country}</p>
+            {logoUrl && <img src={logoUrl} alt="Team Logo" />}
+</div>
     );
 }
 
