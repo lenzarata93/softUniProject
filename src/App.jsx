@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 import TeamList from "./components/TeamList";
+import TeamStat from "./components/TeamStat";
 
 
 
@@ -17,6 +18,7 @@ function App() {
 <Route path="/teams" element={<TeamList />}></Route>
 <Route path="/about" element ={<About />}></Route>
 <Route path="/contacts" element= {<Contacts />}></Route>
+<Route path="/statistics/:id" element= {<TeamStat />}></Route>
 </Routes>
 
     </>
