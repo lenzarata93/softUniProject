@@ -1,0 +1,5 @@
+.styles.cards{ 
+    -ms-flex-item-align: auto;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+}
