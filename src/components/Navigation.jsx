@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Navigation = ()=>{
 return (
 <nav>
-  <a href="/">HOME</a>
-  <a href="/about">ABOUT</a>
-  <a href="/contacts">CONTACTS</a>
+    <Link to='/'>HOME</Link>
+    <Link to='/about'>ABOUT</Link>
+    <Link to='/contacts'>CONTACTS</Link>
+ 
 </nav>
 );
 
