@@ -24,12 +24,13 @@ useEffect(() => {
   
   
     return(
-        <>
-
-    {teams.map(team => <Team
-     />)}
-
-
-</>
+       <>
+       {teams.map(team =>(
+        <article key={team.team_id}>
+            <Team {...team} />
+        </article>
+       ))}
+       
+       </>
     )};
     export default TeamList;
