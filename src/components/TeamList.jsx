@@ -26,7 +26,7 @@ useEffect(() => {
     return(
        <>
        {teams.map(team =>(
-        <article key={team.team_id}>
+        <article className="teams" key={team.team_id}>
             <Team {...team} />
         </article>
        ))}
