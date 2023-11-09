@@ -1,33 +1,34 @@
-import { useEffect } from 'react';
+import { Button } from 'bootstrap';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { Link } from 'react-router-dom';
 
 
 const Team =({
     team_name ,
     team_badge,
+    team_id,
 }) =>
 
 {
 return (
     <>
-    <CardGroup>
-    <Card>
-      <Card.Img variant="top" src="holder.js/100px160" />
-      <Card.Body>
-        <Card.Title >{team_name}</Card.Title>
-        <button>I love it!</button>
-        <button>For the team</button>
-        <button>Statistic</button>
-        <button>LineUps</button>
-       
-      </Card.Body>
-      <Card.Footer>
-        <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Footer>
-    </Card>
+<div class="card-group">
+  <div class="card">
+    <img src="holder.js/100px160" class="card-img-top" alt="Card image cap"/>
+    <div class="card-body">
+      <h5 class="card-title">{team_name}</h5>
+      <Link to={`/team/${team_id}/vote`} class="btn btn-primary">I love it! </Link>
+      <Link to={`/team/${team_id}/team`} class="btn btn-primary">For the team </Link>
+      <Link to={`/team/${team_id}/stat`} class="btn btn-primary">Statistic </Link>
+      <Link to={`/team/${team_id}/lineups`} class="btn btn-primary">LineUps </Link>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
 
-  </CardGroup>
   </>
 );
 
